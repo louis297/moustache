@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
+const baseUrl:string = (document.getElementsByTagName('base')[0] || {}).href || '';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter basename={baseUrl}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

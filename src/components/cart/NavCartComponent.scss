@@ -1,0 +1,21 @@
+@import '../../App.scss';
+
+.CartDropDownMenu {
+  width: 400px;
+  right: 0;
+  left: auto;
+}
+
+.MyCartTitle {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: $FontSecondary;
+}
+
+.MyCartTitle:hover {
+  color: $FontPrimary;
+}
+
+.MyCartTitle[aria-expanded=true] {
+  background-color: white;
+}

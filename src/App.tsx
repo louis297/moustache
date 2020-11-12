@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Layout from './components/Layout';
+import { Route } from 'react-router-dom';
+import Home from './components/Home';
+import ItemDetailComponent from './components/listitem/ItemDetailComponent';
+import { ItemSelectedModel } from './models/itemmodels/ItemSelectedModel';
+
+export interface ICartContext {
+  itemsInCart:ItemSelectedModel[]
+  setItemsInCart: ( newItemInCart:ItemSelectedModel[] ) => void
+}
+
+export const CartContext = React.createContext<ICartContext>({} as ICartContext)
 
 function App() {
+  const [itemsInCart, setItemsInCart] = useState<ItemSelectedModel[]>([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartContext.Provider value={{itemsInCart, setItemsInCart}}>
+      <Layout>
+        {/* TODO: currently path / (or component Home) is just using ListItemComponent */}
+        <Route exact path='/' component={Home}/>
+        <Route path='/listitem' component={ItemDetailComponent}/>
+      </Layout>
+    </CartContext.Provider>
   );
 }
 

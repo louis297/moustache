@@ -1,0 +1,88 @@
+@import '../../App.scss';
+
+.AddItemToCartForm input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.AddItemToCartForm label {
+  display: inline-block;
+  background-color: white;
+  padding: 10px 20px;
+  margin-right: 0.5rem;
+  font-size: 16px;
+  color: $FontSecondary;
+  border: 2px solid $BorderLightGrey;
+  border-radius: 0px;
+}
+
+.AddItemToCartForm input[type="radio"]:checked + label {
+  background-color:white;
+  border-color: $BorderDarkGrey;
+  color: $FontPrimary;
+}
+
+// .AddItemToCartForm input[type="radio"]:focus + label {
+//   border: 2px dashed #222222;
+// }
+
+.AddItemToCartForm label:hover {
+  background-color: $ButtonHoverBackground;
+}
+
+.RequiredStar {
+  color: $RequiredStar;
+}
+
+.ItemDetailName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $FontPrimary;
+}
+
+.ItemDetailPrice{
+  font-size:0.9rem;
+  font-weight: bold;
+  color: $FontPrimary;
+  // margin-bottom: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid $BorderLightGrey;
+  border-bottom: 1px solid $BorderLightGrey;
+}
+
+.ItemDetailDescription{
+  font-size:0.9rem;
+  color: $FontSecondary;
+  margin-bottom: 24px;
+}
+
+.ItemDetailSize{
+  font-size:0.8rem;
+  color: $FontSecondary;
+  font-weight: bold;
+}
+
+.ItemDetailSize .SelectedSize{
+  color: $FontPrimary;
+}
+
+.AddToCartButton {
+  vertical-align: middle;
+  font-weight: bold;
+  border-radius: 0px;
+  border: 2px solid $BorderDarkGrey;
+  color: $FontPrimary;
+  background-color: white;
+}
+
+.AddToCartButton:hover {
+  color:white;
+  background-color: $BorderDarkGrey;
+  border: 0px;
+}
+
+.AddToCartButton:focus {
+  outline: none;
+}
